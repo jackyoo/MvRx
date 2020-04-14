@@ -3,6 +3,7 @@ buildscript {
 
     repositories {
         google()
+        maven { url = uri("https://dl.bintray.com/apollographql/android/") }
         jcenter()
         maven { url "https://oss.sonatype.org/service/local/repositories/snapshots/content/" }
     }
@@ -10,6 +11,8 @@ buildscript {
         classpath "com.android.tools.build:gradle:${versions.gradlePlugin}"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:${versions.kotlin}"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+
+        classpath 'com.apollographql.apollo:apollo-gradle-plugin:1.4.4'
 
         // Upload with:
         // ./gradlew clean assemble androidSourcesJar androidJavadocsJar uploadArchives --no-daemon --no-parallel
@@ -32,7 +35,9 @@ allprojects {
 
     repositories {
         google()
-        jcenter()
         maven { url "https://jitpack.io" }
+        maven { url "https://oss.sonatype.org/service/local/repositories/snapshots/content/" }
+        maven { url = uri("https://dl.bintray.com/apollographql/android/") }
+        jcenter()
     }
 }

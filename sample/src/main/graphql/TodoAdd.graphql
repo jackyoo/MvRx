@@ -1,0 +1,7 @@
+mutation TodoAdd($title: String!) {
+  add(title: $title) {
+    id
+    title
+    completed
+  }
+}
