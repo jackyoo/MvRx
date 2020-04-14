@@ -6,6 +6,13 @@
         android:id="@+id/main"
         android:name="com.airbnb.mvrx.sample.MainFragment">
         <action
+            android:id="@+id/action_mainFragment_to_todo"
+            app:destination="@id/toDoFragment"
+            app:enterAnim="@anim/anim_enter"
+            app:exitAnim="@anim/anim_exit"
+            app:popEnterAnim="@anim/anim_pop_enter"
+            app:popExitAnim="@anim/anim_pop_exit"/>
+        <action
             android:id="@+id/action_mainFragment_to_dadJokeIndex"
             app:destination="@id/dadJokeIndex"
             app:enterAnim="@anim/anim_enter"
@@ -67,6 +74,9 @@
             app:popEnterAnim="@anim/anim_pop_enter"
             app:popExitAnim="@anim/anim_pop_exit"/>
     </fragment>
+    <fragment
+        android:id="@+id/toDoFragment"
+        android:name="com.airbnb.mvrx.sample.features.graphQLTODO.ToDoFragment"/>
     <fragment
         android:id="@+id/flowCounterFragment"
         android:name="com.airbnb.mvrx.sample.features.flow.FlowCounterFragment"/>

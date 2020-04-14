@@ -15,6 +15,20 @@ class MainFragment : BaseFragment() {
         }
 
         basicRow {
+            id("todo")
+            title("GraphQL TODOs")
+            subtitle(
+                    demonstrates(
+                            "Apollo",
+                            "Fragment arguments",
+                            "Network requests"
+                    )
+            )
+            clickListener { _ -> navigateTo(R.id.
+                    action_mainFragment_to_todo) }
+        }
+
+        basicRow {
             id("hello_world")
             title("Hello World")
             subtitle(demonstrates("Simple MvRx usage"))
@@ -54,7 +68,8 @@ class MainFragment : BaseFragment() {
                     "Dependency Injection"
                 )
             )
-            clickListener { _ -> navigateTo(R.id.action_mainFragment_to_dadJokeIndex) }
+            clickListener { _ -> navigateTo(R.id.
+                    action_mainFragment_to_dadJokeIndex) }
         }
 
         basicRow {

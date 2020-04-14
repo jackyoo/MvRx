@@ -1,0 +1,7 @@
+query TodosQuery {
+  todos {
+    id
+    title
+    completed
+  }
+}

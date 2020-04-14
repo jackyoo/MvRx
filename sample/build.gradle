@@ -2,6 +2,7 @@ apply plugin: "com.android.application"
 apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
 apply plugin: "kotlin-kapt"
+apply plugin: 'com.apollographql.apollo'
 
 android {
     compileSdkVersion versions.compileSdk
@@ -34,6 +35,12 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+    apollo {
+        generateKotlinModels.set(true) // or false for Java models
+//        schemaFile = file("./src/main/java/com/airbnb/mvrx/sample/schema.json")
+//        rootPackageName = "com.airbnb.mvrx.sample"
+    }
 }
 
 androidExtensions {
@@ -62,6 +69,11 @@ dependencies {
     implementation libraries.rxAndroid
     implementation libraries.rxJava
     implementation project(":mvrx")
+
+    implementation("com.apollographql.apollo:apollo-runtime:1.4.4")
+
+    compileOnly("org.jetbrains:annotations:13.0")
+    testCompileOnly("org.jetbrains:annotations:13.0")
 
     testImplementation testLibraries.junit
 }
